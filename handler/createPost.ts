@@ -10,6 +10,7 @@ export async function addNewPost ({ request, response }: { request: any; respons
 
     const body = await request.body();
     const postInfo: PostInterface = body.value;
+
     let status = 200;
    // console.log(postInfo);
 

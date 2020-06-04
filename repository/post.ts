@@ -27,9 +27,10 @@ export async function getPostByTitle(keyword: string) {
 }
 
 export async function getTopView() { 
-   var  query = "SELECT * FROM posts ORDER BY count_view DESC LIMIT 4";
+   var  query = "SELECT posts.*,user.name FROM posts INNER JOIN user ON posts.user_id = user.id ORDER BY count_view DESC LIMIT 4";
     return await client.execute(query);
 }
+
 
 
 
