@@ -15,8 +15,7 @@ export async function addNewPost ({ request, response }: { request: any; respons
 
     
     response.body = await insert(postInfo);
-    
-    
+
      response.status = status;
    
 
