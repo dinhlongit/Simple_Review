@@ -4,4 +4,5 @@ export interface PostInterface {
     content: string
     image: string
     count_view: number
+    user_id: number
 }

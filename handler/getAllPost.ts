@@ -5,3 +5,5 @@ export async function getAllPost ({ response }: { response: any }) {
   const result = await getPosts();
   response.body = result.rows;
 }
+
+
