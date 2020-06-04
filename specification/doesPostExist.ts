@@ -12,6 +12,6 @@ export async function doesUserExist(email: string, password: string) {
 }
 
 export async function doesUserExist1(email: string, password: string) {
-    const result = await client.query(`SELECT id FROM user WHERE email = ? and password = ?`, [email, password]);
-    return result.rows;
+    const result = await client.query(`SELECT * FROM user WHERE email = ? and password = ?`, [email, password]);
+    return result;
 }

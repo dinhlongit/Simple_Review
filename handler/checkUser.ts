@@ -11,13 +11,15 @@ export async function checkUserExist ({request, response }: {request: any, respo
  
     const _user: UserInterface =body.value;
 
-    const hasRecord = await doesUserExists.doesUserExist(_user.email, _user.password);
+    const user = await doesUserExists.doesUserExist1(_user.email, _user.password);
+
+    //console.log(hasRecord);
     let status = 200;
 
-     if (hasRecord){
+     if (user.length != 0){
      // get user by email
     // const result = await getPostById(params);
-     response.body = { "validate": "Yes" };
+     response.body = { user };
      }else{
          response.body = { "error": "No" };
          status = 400;
